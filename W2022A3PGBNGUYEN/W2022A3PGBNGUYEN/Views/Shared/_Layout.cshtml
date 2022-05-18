@@ -1,0 +1,106 @@
+﻿@{
+    string controllerName = this.ViewContext.RouteData.Values["controller"].ToString();
+
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Do not modify the meta properties below -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="b142f793-ce9d-46e9-b440-906aa0031b02" />
+    <meta name="application-name" content="2221-W2022A3PGBNGUYEN" />
+
+    <title>@ViewBag.Title - W2022A3PGBNGUYEN</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    @if (controllerName == "Home" || controllerName == "home")
+    {
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            @Html.ActionLink("W2022A3PGBNGUYEN", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Album", "Index", "Album")</li>
+                            <li>@Html.ActionLink("Artist", "Index", "Artist")</li>
+                            <li>@Html.ActionLink("Media Types", "Index", "MediaType")</li>
+                            <li>@Html.ActionLink("Tracks", "Index", "Track")</li>
+                            <li>@Html.ActionLink("Playlists", "Index", "Playlist")</li>
+
+
+                        </ul>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            @Html.ActionLink(controllerName + " List", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Album", "Index", "Album")</li>
+                            <li>@Html.ActionLink("Artist", "Index", "Artist")</li>
+                            <li>@Html.ActionLink("Media Types", "Index", "MediaType")</li>
+                            <li>@Html.ActionLink("Tracks", "Index", "Track")</li>
+                            <li>@Html.ActionLink("Playlists", "Index", "Playlist")</li>
+
+
+                        </ul>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    }
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <h4>&copy; @DateTime.Now.Year - Pham Gia Bao Nguyen #125433177</h4>
+            <address>
+                38 Avondale Ave<br />
+                Toronto, ON M2N 2T9<br />
+                <abbr title="Phone">P:</abbr>
+                457.974.1907
+            </address>
+
+            <address>
+                <strong>Email:</strong>   <a href="mailto:Support@example.com">pgbnguyen@@gmail.com</a><br />
+            </address>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

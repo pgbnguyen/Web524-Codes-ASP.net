@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DataContext-Web.config Connection String" description="DataContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DBCustomStore.mdf;Initial Catalog=DBWeb_app_project_template_v2;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Web524\ Codes\\W2022A5PGBNGUYEN\\W2022A5PGBNGUYEN\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DataContext']/@connectionString" />
+  </parameter>
+  <parameter name="DataContext_DatabasePublish-Web.config Connection String" description="DataContext_DatabasePublish Connection String used in web.config by the application to access the database." defaultValue="DataContext_DatabasePublish.ConnetionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Web524\ Codes\\W2022A5PGBNGUYEN\\W2022A5PGBNGUYEN\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DataContext_DatabasePublish']/@connectionString" />
+  </parameter>
+</parameters>

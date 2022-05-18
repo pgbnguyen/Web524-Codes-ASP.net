@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="C:\Web524 Codes\W2022A5PGBNGUYEN\W2022A5PGBNGUYEN\obj\Release\Package\PackageTmp" />
+  <setAcl path="C:\Web524 Codes\W2022A5PGBNGUYEN\W2022A5PGBNGUYEN\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="C:\Web524 Codes\W2022A5PGBNGUYEN\W2022A5PGBNGUYEN\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+</sitemanifest>

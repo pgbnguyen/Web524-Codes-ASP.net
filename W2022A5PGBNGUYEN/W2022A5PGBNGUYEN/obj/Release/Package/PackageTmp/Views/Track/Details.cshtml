@@ -1,0 +1,74 @@
+﻿@model W2022A5PGBNGUYEN.Models.TrackWithDetailViewModels
+
+@{
+    ViewBag.Title = $"Details for track {Model.Name}";
+    var albumNum = Model.Albums.Count();
+    var userAccount = new W2022A5PGBNGUYEN.Controllers.RequestUser(User as System.Security.Claims.ClaimsPrincipal);
+
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Composers)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Composers)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Genre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genre)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Clerk)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Clerk)
+        </dd>
+
+        <dt>
+            Number of albums with this track
+        </dt>
+
+        <dd>
+            @albumNum
+
+        </dd>
+        <dt>
+            Albums with this track
+        </dt>
+
+        <dd>
+            @foreach (var album in Model.AlbumNames)
+            {
+
+
+                <p>@album</p>
+            }
+
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

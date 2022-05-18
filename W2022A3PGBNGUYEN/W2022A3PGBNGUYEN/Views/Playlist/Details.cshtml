@@ -1,0 +1,70 @@
+﻿@model W2022A3PGBNGUYEN.Models.PlaylistWithTracksViewModel
+
+
+<h2>Playlist details <span class="bg-info">@Model.Name</span> </h2>
+<div>@ViewBag.Title</div>
+
+<hr />
+
+<p>
+    @Html.ActionLink("Edit", "EditPlaylist", new {id = Model.PlaylistId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        @*<dt>
+                @Html.DisplayNameFor(model => model.PlaylistId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PlaylistId)
+            </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <br />
+        @*<dt>
+                @Html.DisplayNameFor(model => model.TracksCount)
+            </dt>*@
+
+        @*<dd>
+                <span class="badge">
+                    @Html.DisplayFor(model => model.TracksCount)
+
+                </span>
+            </dd>*@
+        <dt>
+
+            @Html.DisplayNameFor(model => model.Tracks)
+        </dt>
+
+        <dd>
+            <span class="badge">
+                @Html.DisplayFor(model => model.TracksCount)
+
+            </span>
+            <br />
+            @if (Model.TracksCount > 0)
+            {
+                foreach (var t in Model.Tracks)
+                {
+                    <span>@t.Name</span><br />
+                }
+            }
+            else
+            {
+                <span>(none)</span>
+            }
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditPlaylist", new { id = Model.PlaylistId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

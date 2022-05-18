@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "10ae7ca4-3fb2-4291-acf4-e88222e3c6c7": {
+      "ProjectGuid": "10ae7ca4-3fb2-4291-acf4-e88222e3c6c7",
+      "DisplayName": "W2022A6PGBNGUYEN",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 1
+}

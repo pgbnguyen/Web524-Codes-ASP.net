@@ -1,0 +1,115 @@
+﻿@model W2022A5PGBNGUYEN.Models.AlbumAddFormViewModels
+    
+@{
+    ViewBag.Title = "AddAlbum";
+}
+
+
+
+@using (Html.BeginForm())
+{
+@Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h2>Add album for artist - @Html.ActionLink(@Model.ArtistName, "Details", new { id = Model.ArtistId })</h2>
+    <h4>Complete the form, and click the Create button</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ReleaseDate, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ReleaseDate, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ReleaseDate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.UrlAlbum, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.UrlAlbum, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.UrlAlbum, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.AlbumGenreList, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("Genre", Model.AlbumGenreList, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.AlbumGenreList, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-3 ">
+
+
+            <div class="form-horizontal well">
+                <h4>All artists</h4>
+
+
+                @foreach (var artist in Model.ArtistList)
+                {
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="ArtistId" checked="@artist.Selected" value="@artist.Value" />
+                            @artist.Text
+                        </label>
+                    </div>
+                }
+            </div>
+
+        </div>
+        <div class="col-md-6 ">
+
+
+            <div class="form-horizontal well">
+                <h4>All tracks</h4>
+
+
+
+                @foreach (var track in Model.TrackList)
+                {
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="TrackIds" value="@track.Value" />
+                            @track.Text
+                        </label>
+                    </div>
+                }
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="//cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
+    <script>CKEDITOR.replace('depiction', { startupFocus: true });</script>
+}

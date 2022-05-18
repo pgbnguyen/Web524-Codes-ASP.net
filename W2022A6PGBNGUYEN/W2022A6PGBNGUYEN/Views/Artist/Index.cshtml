@@ -1,0 +1,64 @@
+﻿@model IEnumerable<W2022A6PGBNGUYEN.Models.ArtistBaseViewModels>
+
+@{
+    ViewBag.Title = "Artist list";
+    var userAccount = new W2022A6PGBNGUYEN.Controllers.RequestUser(User as System.Security.Claims.ClaimsPrincipal);
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @if (userAccount.HasRoleClaim("Executive"))
+    {
+        @Html.ActionLink("Create New Artist", "Create")
+    }
+
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UrlArtist)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BirthName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BirthOrStartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Genre)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <img src="@Html.DisplayFor(modelItem => item.UrlArtist)" alt="@item.Name" width="150" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BirthName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BirthOrStartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre)
+            </td>
+
+
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
